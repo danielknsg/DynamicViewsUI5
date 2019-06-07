@@ -1,0 +1,25 @@
+<mvc:view controllerName="Dynamicview.controller.App" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+    <App id="app">
+        <Page id="page">
+            <Title text="DynamicView"/>
+            <form:SimpleForm>
+                <Label labelFor="hospitalInput" text="Hospital"></Label>
+                <Input id="hospitalInput" 
+                                    type="Text" 
+                                    startSuggestion="0"
+                                    textFormatMode="KeyValue"
+                                    placeholder="Xml view Field" 
+                                    showSuggestion="true" 
+                                    showValueHelp="false"
+                                    valueHelpRequest="handleCustomerValueHelp"
+                                    suggestionItemSelected="customerSuggestionItemSelected" 
+                                    suggestionItems="http://localhost:5000/api/srep/soldtoparties">
+                                    <suggestionItems>
+                                        <core:ListItem key="{Kunnr}" text="{Name1}" additionalText="{Kunnr}" />
+                                    </suggestionItems>
+                </Input>
+            </form:SimpleForm>
+
+        </Page>
+    </App>
+</mvc:view>
